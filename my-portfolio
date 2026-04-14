@@ -1,0 +1,191 @@
+index.html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+  <h1>Hello, I'm</h1>
+  <h2 class="name">Abhishek Bharti</h2>
+  <p>Cybersecurity Engineer | Developer</p>
+
+  <button>View Projects</button>
+  <button>Contact Me</button>
+</div>
+
+<nav>
+  <a href="#">Home</a>
+  <a href="#">Projects</a>
+  <a href="#">Skills</a>
+  <a href="tel:6390332507">6390332507</a>
+</nav>
+
+<section class="projects">
+  <h2>Currently Working On</h2>
+
+  <div class="project-container">
+
+    <div class="card">
+      <h3>Saarthi</h3>
+      <p>LinkedIn Lead Generation Automation</p>
+      <span class="tag">Active</span>
+    </div>
+
+    <div class="card">
+      <h3>Critera HR</h3>
+      <p>Structured Talent Intelligence System</p>
+      <span class="tag">Active</span>
+    </div>
+
+  </div>
+</section>
+
+</body>
+</html>
+<style class="css">
+    body {
+  margin: 0;
+  font-family: Arial;
+  background: #0b0f1a;
+  color: white;
+}
+
+.container {
+  text-align: center;
+  margin-top: 100px;
+}
+
+.name {
+  font-size: 50px;
+  color: cyan;
+}
+.name {
+  font-size: 60px;
+  background: linear-gradient(90deg, #00f0ff, #ff00ff);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+button {
+  padding: 10px 20px;
+  margin: 10px;
+  border: none;
+  background: #00f0ff;
+  color: black;
+  border-radius: 10px;
+}
+body {
+  background: radial-gradient(circle at center, #0b0f1a, #000);
+}
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+.projects {
+  padding: 100px 20px;
+  text-align: center;
+}
+
+.projects h2 {
+  font-size: 40px;
+  margin-bottom: 40px;
+  color: #00f0ff;
+}
+
+.project-container {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.card {
+  width: 300px;
+  padding: 20px;
+  border-radius: 15px;
+  background: rgba(0, 255, 255, 0.05);
+  border: 1px solid rgba(0, 255, 255, 0.3);
+  backdrop-filter: blur(10px);
+  transition: 0.3s;
+  position: relative;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 0 20px #00f0ff;
+}
+
+.card h3 {
+  color: white;
+}
+
+.card p {
+  color: #aaa;
+}
+
+.tag {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: #00ff99;
+  color: black;
+  padding: 5px 10px;
+  border-radius: 10px;
+  font-size: 12px;
+}
+.card {
+  opacity: 0;
+  transform: translateY(50px);
+}
+</style>
+
+javascript.js
+const cards = document.querySelectorAll('.card');
+
+window.addEventListener('scroll', () => {
+  cards.forEach(card => {
+    const position = card.getBoundingClientRect().top;
+    const screenHeight = window.innerHeight;
+
+    if (position < screenHeight - 100) {
+      card.style.opacity = 1;
+      card.style.transform = "translateY(0)";
+    }
+  });
+});
+<react>
+    import { useEffect } from "react"; import { motion } from "framer-motion";
+
+export default function Portfolio() { return ( <div className="bg-[#0b0f1a] text-white min-h-screen font-sans"> <Navbar /> <Hero /> <Projects /> </div> ); }
+
+function Navbar() { return ( <nav className="fixed top-0 w-full backdrop-blur-md bg-white/5 border-b border-cyan-500/20 flex justify-center gap-8 py-4 z-50"> {["Home", "Current Work", "About", "Skills", "Projects", "Contact"].map((item) => ( <a key={item} href="#" className="hover:text-cyan-400 transition"> {item} </a> ))} </nav> ); }
+
+function Hero() { return ( <section className="h-screen flex flex-col justify-center items-center text-center"> <h1 className="text-2xl">Hello, I'm</h1> <h2 className="text-6xl font-bold bg-gradient-to-r from-cyan-400 to-purple-500 text-transparent bg-clip-text"> Your Name </h2> <p className="text-gray-400 mt-4">Cybersecurity Engineer | Developer</p> <div className="mt-6 flex gap-4"> <button className="px-6 py-2 bg-cyan-400 text-black rounded-xl">View Projects</button> <button className="px-6 py-2 border border-cyan-400 rounded-xl">Contact Me</button> </div> </section> ); }
+
+function Projects() { return ( <section className="py-20 text-center"> <h2 className="text-4xl text-cyan-400 mb-10">Currently Working On</h2>
+
+<div className="flex flex-wrap justify-center gap-8">
+    {[1, 2].map((item, i) => (
+      <motion.div
+        key={i}
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: i * 0.2 }}
+        className="w-72 p-6 rounded-2xl bg-white/5 border border-cyan-400/30 backdrop-blur-lg relative hover:shadow-[0_0_20px_#00f0ff] transition"
+      >
+        <span className="absolute top-3 right-3 bg-green-400 text-black text-xs px-2 py-1 rounded">Active</span>
+        <h3 className="text-xl font-semibold">Project {item}</h3>
+        <p className="text-gray-400 mt-2">Project description here</p>
+      </motion.div>
+    ))}
+  </div>
+</section>
+
+); }
+</react>
+<tailwind></tailwind>
