@@ -32,7 +32,7 @@ index.html
           transition={{ delay: 0.5 }}
           className="mt-4 text-xl text-gray-300"
         >
-          Cyberpunk Developer • Travel Graduate • UI Enthusiast
+          Developer • Travel Graduate •  MBA FINANCE
         </motion.p>
       </section>
 
@@ -40,7 +40,7 @@ index.html
       <Section title="About Me">
         I am from Gorakhpur, Uttar Pradesh. Graduated in Bachelor of Tour and
         Travel Management from Amity University, Gurgaon. Passionate about
-        modern web development and futuristic UI design.
+        modern web development and TOURISM.
       </Section>
 
       {/* SKILLS */}
